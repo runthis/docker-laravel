@@ -1,5 +1,5 @@
 FROM docker.io/bitnami/minideb:buster
-LABEL maintainer "Bitnami <containers@bitnami.com>"
+LABEL maintainer "Me"
 
 ENV PATH="/opt/bitnami/python/bin:/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/node/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
@@ -9,7 +9,8 @@ RUN install_packages ca-certificates curl gzip libbsd0 libbz2-1.0 libc6 libcom-e
 RUN /build/bitnami-user.sh
 RUN /build/install-nami.sh
 RUN bitnami-pkg install python-3.8.11-0 --checksum 28b91ef5db9ad93e704881400703e4085bd82f016be15e3cf8760df044da9490
-RUN bitnami-pkg unpack php-7.4.22-1 --checksum 3ef2eb24c358a84f03bf1eee1747a1379bac7ab2c54601abae4423a72ed6f843
+#RUN bitnami-pkg unpack php-7.4.22-1 --checksum 3ef2eb24c358a84f03bf1eee1747a1379bac7ab2c54601abae4423a72ed6f843
+RUN bitnami-pkg unpack php-8.0.9-1 --checksum e75bd6d2a11128706243bdb1fecda7e9200372ff6b9f579d4fe6e7022b634b0b
 RUN bitnami-pkg install node-14.17.4-0 --checksum b8d99ebde08907038f649460bf89253fe88c34aa1ca934f8598a8ebdb6a87e1c
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 RUN bitnami-pkg install laravel-8.5.23-0 --checksum dd63bcd8f8725b3acc048ac5632fab2f83c8c4e1afd6f1b9e01b028a72536f4b
@@ -25,6 +26,7 @@ ENV BITNAMI_APP_NAME="laravel" \
     OS_NAME="linux"
 
 EXPOSE 3000
+EXPOSE 3001
 
 WORKDIR /app
 USER bitnami

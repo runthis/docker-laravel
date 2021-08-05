@@ -5,22 +5,36 @@ services:
     image: docker.io/bitnami/mariadb:10.2
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_USER=my_user
-      - MARIADB_DATABASE=my_database
-      - MARIADB_PASSWORD=my_password
-
-  myapp:
+      - MARIADB_USER=laravel
+      - MARIADB_DATABASE=laravel
+      - MARIADB_PASSWORD=laravel
+    ports:
+      - 3006:3306
+  laravel:
     tty: true
     image: docker.io/bitnami/laravel:8
     environment:
       - DB_HOST=mariadb
-      - DB_USERNAME=my_user
-      - DB_DATABASE=my_database
-      - DB_PASSWORD=my_password
+      - DB_USERNAME=laravel
+      - DB_DATABASE=laravel
+      - DB_PASSWORD=laravel
     depends_on:
       - mariadb
     ports:
-      - 3000:3000
+      - 3005:3005
     volumes:
       - ./:/app
+    command: bash ./bin/container-init.sh
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 3010:80
+    depends_on:
+      - mariadb
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PMADB=phpmyadmin
     # privileged: true # Privileged mode could be required to run this container under Windows
