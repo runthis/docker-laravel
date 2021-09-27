@@ -100,7 +100,7 @@ Following are a few examples of launching some commonly used Laravel development
 ## Special Thanks
 
 
-We want to thank the following individuals for reporting vulnerabilities responsibly and helping improve the security of this container.
+We want to thank the following vendor for supplying this awesome package.
 
 - Bitnami: [bitnami-docker-laravel](https://github.com/bitnami/bitnami-docker-laravel/)
 
