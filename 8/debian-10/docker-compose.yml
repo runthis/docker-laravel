@@ -13,7 +13,7 @@ services:
       - 3006:3306
   laravel:
     tty: true
-    image: docker.io/bitnami/laravel:8
+    image: docker.io/runthis/laravel:latest
     environment:
       - DB_HOST=mariadb
       - DB_USERNAME=laravel
@@ -39,3 +39,4 @@ services:
       - PMA_USER=root
       - PMA_PMADB=phpmyadmin
     # privileged: true # Privileged mode could be required to run this container under Windows
+
