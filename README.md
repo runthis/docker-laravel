@@ -1,13 +1,15 @@
 
 # Laravel Development Container
 
+Please see the **[original vendor](https://github.com/bitnami/bitnami-docker-laravel/)** for this project if you are unsure of your needs.
+
 ## TL;DR
 
 ### Local workspace
 
 ```console
 $ mkdir ~/myapp && cd ~/myapp
-$ curl -LO https://raw.githubusercontent.com/runthis/docker-laravel/master/docker-compose.yml
+$ curl -LO https://raw.githubusercontent.com/runthis/docker-laravel/main/docker-compose.yml
 $ docker-compose up
 ```
 
@@ -22,7 +24,6 @@ $ docker-compose up
 The purpose of this fork is to use PHP 8 with this vendor. Vendor upstreams are merged every few weeks.
 
 
-
 ## Getting started
 
 The quickest way to get started with the Laravel Development Container is using [docker-compose](https://docs.docker.com/compose/).
@@ -34,10 +35,10 @@ mkdir ~/myapp
 cd ~/myapp
 ```
 
-Download the [docker-compose.yml](https://raw.githubusercontent.com/runthis/docker-laravel/master/docker-compose.yml) file in the application directory:
+Download the [docker-compose.yml](https://raw.githubusercontent.com/runthis/docker-laravel/main/docker-compose.yml) file in the application directory:
 
 ```console
-$ curl -LO https://raw.githubusercontent.com/runthis/docker-laravel/master/docker-compose.yml
+$ curl -LO https://raw.githubusercontent.com/runthis/docker-laravel/main/docker-compose.yml
 ```
 
 Finally launch the Laravel application development environment using:
@@ -52,7 +53,7 @@ Among other things, the above command creates a container service, named `myapp`
 >
 > If no application available at http://localhost:3005 and you're running Docker on Windows, you might need to uncomment `privileged` setting for `myapp` container. Later, re-launch the Laravel application development environment as stated before.
 
-In addition to the Laravel Development Container, the [docker-compose.yml](https://raw.githubusercontent.com/runthis/docker-laravel/master/docker-compose.yml) file also configures a MariaDB service to serve as the database backend of your Laravel application, as well as a PHPMyAdmin service available at http://localhost:3010.
+In addition to the Laravel Development Container, the [docker-compose.yml](https://raw.githubusercontent.com/runthis/docker-laravel/main/docker-compose.yml) file also configures a MariaDB service to serve as the database backend of your Laravel application, as well as a PHPMyAdmin service available at http://localhost:3010.
 
 ## Executing commands
 
