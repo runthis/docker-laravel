@@ -1,5 +1,3 @@
-# Laravel packaged by Bitnami
-
 # Laravel Development Container
 
 Please see the **[original vendor](https://github.com/bitnami/bitnami-docker-laravel/)** for this project if you are unsure of your needs.
