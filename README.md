@@ -1,6 +1,6 @@
 # Laravel Development Container
 
-Please see the **[original vendor](https://github.com/bitnami/bitnami-docker-laravel/)** for this project if you are unsure of your needs.
+**This has been archived**, as the original vendor now supports PHP 8+. Please see them here: **[original vendor](https://github.com/bitnami/bitnami-docker-laravel/)**
 
 ## TL;DR
 
